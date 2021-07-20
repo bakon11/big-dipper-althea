@@ -1,6 +1,9 @@
 export const DesmosProfileDocument = /* GraphQL */`
-query DesmosProfile($address: String) {
-  profile(where: {address: {_eq: $address}}, limit: 1) {
+query DesmosProfile($addressOrDtag: String) {
+  profile(where: {_or: [
+    {dtag: {_eq: $addressOrDtag}},
+    {address: {_eq: $addressOrDtag}},
+  ]}, limit: 1) {
     address
     bio
     dtag

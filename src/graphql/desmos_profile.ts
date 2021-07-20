@@ -20166,7 +20166,7 @@ export type Validator_Voting_Power_Variance_Order_By = {
 };
 
 export type DesmosProfileQueryVariables = Exact<{
-  address?: Maybe<Scalars['String']>;
+  addressOrDtag?: Maybe<Scalars['String']>;
 }>;
 
 

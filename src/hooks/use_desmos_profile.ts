@@ -8,7 +8,7 @@ import {
 } from '@graphql/desmos_profile_graphql';
 
 type Options = {
-  address?: string;
+  addressOrDtag?: string;
   onComplete: (data: DesmosProfileQuery) => void;
 }
 
@@ -18,16 +18,16 @@ export const useDesmosProfile = (options: Options) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (options.address) {
-      fetchDesmosProfile(options.address);
+    if (options.addressOrDtag) {
+      fetchDesmosProfile(options.addressOrDtag);
     }
-  }, [options.address]);
+  }, [options.addressOrDtag]);
 
-  const fetchDesmos = async (address: string) => {
+  const fetchDesmos = async (addressOrDtag: string) => {
     try {
       const { data } = await axios.post(PROFILE_API, {
         variables: {
-          address,
+          addressOrDtag,
         },
         query: DesmosProfileDocument,
       });
