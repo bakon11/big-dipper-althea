@@ -84,6 +84,12 @@ export const useDesmosProfile = (options: Options) => {
 
     const profile = data.profile[0];
 
+    const self = {
+      network: 'desmos',
+      identifier: profile.address,
+      creationTime: profile.creationTime,
+    };
+
     const applications = profile.applicationLinks.map((x) => {
       return ({
         network: x.application,
@@ -106,7 +112,7 @@ export const useDesmosProfile = (options: Options) => {
       nickname: profile.nickname,
       imageUrl: profile.profilePic,
       bio: profile.bio,
-      connections: [...applications, ...chains].sort((a, b) => (
+      connections: [self, ...applications, ...chains].sort((a, b) => (
         (a.network.toLowerCase() > b.network.toLowerCase()) ? 1 : -1
       )),
     });
