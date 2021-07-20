@@ -6,6 +6,14 @@ export const useStyles = () => {
       return ({
         root: {
           ...theme.mixins.layout,
+          display: 'grid',
+          height: '100%',
+          gridTemplateRows: '1fr',
+          gridTemplateColumns: '1fr',
+          gridGap: theme.spacing(1),
+          [theme.breakpoints.up('lg')]: {
+            gridGap: theme.spacing(2),
+          },
         },
       });
     },

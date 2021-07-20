@@ -51,19 +51,23 @@ export const useDesmosProfile = (options: Options) => {
     }
   };
 
-  const fetchDesmosProfile = async (address: string) => {
+  const fetchDesmosProfile = async (addressOrDtag: string) => {
     let data:DesmosProfileQuery = {
       profile: [],
     };
     try {
       setLoading(true);
-      if (address.includes('desmos')) {
-        data = await fetchDesmos(address);
+      if (addressOrDtag.includes('desmos') || addressOrDtag[0] === '@') {
+        // if we are looking by dtags
+        if (addressOrDtag[0] === '@') {
+          addressOrDtag = addressOrDtag.replace('@', '');
+        }
+        data = await fetchDesmos(addressOrDtag);
       }
 
       // if the address is a link instead
       if (!data.profile.length) {
-        data = await fetchLink(address);
+        data = await fetchLink(addressOrDtag);
       }
       setLoading(false);
       return options.onComplete(data);
@@ -97,6 +101,7 @@ export const useDesmosProfile = (options: Options) => {
     });
 
     return ({
+      createdBy: profile.address,
       dtag: profile.dtag,
       nickname: profile.nickname,
       imageUrl: profile.profilePic,

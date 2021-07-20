@@ -25,17 +25,23 @@ export const useProfileDetails = () => {
     fetchDesmosProfile, formatDesmosProfile,
   } = useDesmosProfile({
     onComplete: (data) => {
-      // console.log(data, 'data');
+      const profile = formatDesmosProfile(data);
       handleSetState({
-        desmosProfile: formatDesmosProfile(data),
+        loading: false,
+        exists: !!profile,
+        desmosProfile: profile,
       });
     },
   });
 
   useEffect(() => {
     if (chainConfig.extra.desmosProfile) {
-      fetchDesmosProfile(R.pathOr('', ['query', 'address'], router));
+      fetchDesmosProfile(R.pathOr('', ['query', 'dtag'], router));
     }
   },
   [R.pathOr('', ['query', 'dtag'], router)]);
+
+  return {
+    state,
+  };
 };

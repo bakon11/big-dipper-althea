@@ -30,6 +30,7 @@ type TokenUnit = {
 }
 
 type DesmosProfile = {
+  createdBy: string;
   dtag: string;
   nickname: string;
   imageUrl: string;
