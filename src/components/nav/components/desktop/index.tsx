@@ -72,7 +72,7 @@ const Desktop: React.FC<{
               role="button"
             />
           ) : (
-            <BigDipperLogoWhite
+            <img src="https://raw.githubusercontent.com/althea-net/althea-site/gh-pages/images/48.png"
               className={classes.logo}
               onClick={toggleMenu}
               role="button"
