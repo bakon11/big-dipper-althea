@@ -62,13 +62,12 @@ const InitialLoad = () => {
       />
       <div className={classes.root}>
         <div>
-          <img src={chainConfig.logo} className={classes.logo} alt="logo" />
-          <LinearProgress className={classes.divider} />
           {theme === 'light' ? (
-            <img src="https://raw.githubusercontent.com/althea-net/althea-site/c41b7650431476fb379b089ae0c40ec7ac173900/images/bird_vector.svg?sanitize=true" />
+            <img src={chainConfig.logo} className={classes.logo} alt="logo" />
           ) : (
-            <img src="https://raw.githubusercontent.com/althea-net/althea-site/c41b7650431476fb379b089ae0c40ec7ac173900/images/bird_vector.svg?sanitize=true" />
+            <img src={chainConfig.logo} className={classes.logo} alt="logo" />
           )}
+          <LinearProgress className={classes.divider} />
         </div>
       </div>
     </>
