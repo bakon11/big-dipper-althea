@@ -1,8 +1,8 @@
 {
   "title": "Althea Testnet 2v3",
   "network": "althea-testnet2v3",
-  "icon": "Althea",
-  "logo": "Althea",
+  "icon": "https://raw.githubusercontent.com/althea-net/althea-site/gh-pages/images/48.png",
+  "logo": "https://raw.githubusercontent.com/althea-net/althea-site/gh-pages/images/48.png",
   "prefix": {
     "consensus": "altheavalcons",
     "validator": "altheavaloper",
