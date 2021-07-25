@@ -22,8 +22,8 @@ const TitleBar:React.FC<{
   return (
     <div className={classnames(className, classes.root)}>
       {
-      title
-        ? <Typography variant="h1">{title}</Typography>
+      chainConfig.title
+        ? <Typography variant="h1">{chainConfig.title}</Typography>
         : <img src={chainConfig.logo} className={classes.logo} alt="logo" />
       }
       <div className={classes.content}>
