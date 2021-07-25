@@ -63,8 +63,10 @@ function createApolloClient() {
   const client = new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: concat(authMiddleware, link),
-    cache: new InMemoryCache({
-    }),
+    cache: new InMemoryCache({}),
+    headers: {
+      "x-hasura-admin-secret": "dupa"
+    },
   });
 
   client.defaultOptions = defaultOptions;
