@@ -87,7 +87,7 @@ const Layout = (props:LayoutProps) => {
             </div>
           </div>
         </div>
-        <Footer className={classes.footer} />
+        {/*<Footer className={classes.footer} />*/}
       </div>
     </>
   );
