@@ -47,7 +47,7 @@ const Layout = (props:LayoutProps) => {
         openGraph={{
           type,
           title: formattedTitle,
-          site_name: 'Big Dipper',
+          site_name: 'Althea Testnet 2v3 Exploder',
           url: currentPath,
           description,
           images: [
