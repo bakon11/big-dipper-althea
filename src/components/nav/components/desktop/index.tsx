@@ -66,15 +66,15 @@ const Desktop: React.FC<{
           }}
         >
           {theme === 'light' ? (
-            <img src="https://raw.githubusercontent.com/althea-net/althea-site/c41b7650431476fb379b089ae0c40ec7ac173900/images/bird_vector.svg"
-              height="150"
+            <img src="https://raw.githubusercontent.com/althea-net/althea-site/c41b7650431476fb379b089ae0c40ec7ac173900/images/bird_vector.svg?sanitize=true"
+              height="100"
               className={classes.logo}
               onClick={toggleMenu}
               role="button"
             />
           ) : (
-            <img src="https://raw.githubusercontent.com/althea-net/althea-site/c41b7650431476fb379b089ae0c40ec7ac173900/images/bird_vector.svg"
-              height="150"
+            <img src="https://raw.githubusercontent.com/althea-net/althea-site/c41b7650431476fb379b089ae0c40ec7ac173900/images/bird_vector.svg?sanitize=true"
+              height="100"
               className={classes.logo}
               onClick={toggleMenu}
               role="button"
