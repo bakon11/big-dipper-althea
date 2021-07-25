@@ -25,7 +25,7 @@ const Layout = (props:LayoutProps) => {
 
   const {
     description = t('common:description'),
-    title = t('common:bigDipper'),
+    title = t('common:altheaTitle'),
     type = 'website',
     // imageUrl = `${baseUrl}/icons/android-chrome-512x512.png`,
     imageUrl = 'https://staging.bigdipper.live/images/big-dipper-social-media.png',
@@ -37,7 +37,7 @@ const Layout = (props:LayoutProps) => {
   // ============================
   // ui
   // ============================
-  const formattedTitle = `${title} | ${chainConfig.title}`;
+  const formattedTitle = `${title}`;
 
   return (
     <>
@@ -47,7 +47,7 @@ const Layout = (props:LayoutProps) => {
         openGraph={{
           type,
           title: formattedTitle,
-          site_name: 'Althea Testnet 2v3 Exploder',
+          site_name: `${title}`,
           url: currentPath,
           description,
           images: [
