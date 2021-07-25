@@ -1,26 +1,26 @@
 {
-  "title": "Desmos Block Explorer",
-  "network": "morpheus-apollo-2",
-  "icon": "https://raw.githubusercontent.com/forbole/big-dipper-assets/master/desmos/icon.svg?sanitize=true",
-  "logo": "https://raw.githubusercontent.com/forbole/big-dipper-assets/master/desmos/logo.svg?sanitize=true",
+  "title": "Althea Testnet 2v3",
+  "network": "althea-testnet2v3",
+  "icon": "Althea",
+  "logo": "Althea",
   "prefix": {
-    "consensus": "desmosvalcons",
-    "validator": "desmosvaloper",
-    "account": "desmos"
+    "consensus": "altheavalcons",
+    "validator": "altheavaloper",
+    "account": "althea"
   },
   "genesis": {
     "time": "2021-07-13T08:00:00",
     "height": 1
   },
-  "primaryTokenUnit": "udaric",
+  "primaryTokenUnit": "ualtg",
   "tokenUnits": {
-    "udaric": {
-      "display": "daric",
+    "ualtg": {
+      "display": "ALTG",
       "exponent": 6
     }
   },
   "extra": {
-    "desmosProfile": true,
+    "desmosProfile": false,
     "forboleX": false
   }
 }
