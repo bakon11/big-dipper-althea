@@ -72,7 +72,7 @@ const Desktop: React.FC<{
               role="button"
             />
           ) : (
-            <img src="https://raw.githubusercontent.com/althea-net/althea-site/gh-pages/images/48.png"
+            <img src="https://raw.githubusercontent.com/althea-net/althea-site/c41b7650431476fb379b089ae0c40ec7ac173900/images/bird_vector.svg"
               className={classes.logo}
               onClick={toggleMenu}
               role="button"
