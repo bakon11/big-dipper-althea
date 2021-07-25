@@ -24,7 +24,7 @@ const InitialLoad = () => {
     currentPath = window?.location?.href || '';
   }
 
-  const title = `${t('common:bigDipper')} | ${chainConfig.title}`;
+  const title = `${t('common:althea')} | ${chainConfig.title}`;
   return (
     <>
       <NextSeo
@@ -33,7 +33,7 @@ const InitialLoad = () => {
         openGraph={{
           type: 'website',
           title,
-          site_name: 'Big Dipper',
+          site_name: 'Althea Exploder',
           url: currentPath,
           description: t('common:description'),
           images: [
@@ -65,9 +65,9 @@ const InitialLoad = () => {
           <img src={chainConfig.logo} className={classes.logo} alt="logo" />
           <LinearProgress className={classes.divider} />
           {theme === 'light' ? (
-            <BigDipperLogoRed />
+            <img src="https://raw.githubusercontent.com/althea-net/althea-site/c41b7650431476fb379b089ae0c40ec7ac173900/images/bird_vector.svg?sanitize=true" />
           ) : (
-            <BigDipperLogoWhite />
+            <img src="https://raw.githubusercontent.com/althea-net/althea-site/c41b7650431476fb379b089ae0c40ec7ac173900/images/bird_vector.svg?sanitize=true" />
           )}
         </div>
       </div>
