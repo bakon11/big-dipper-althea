@@ -60,6 +60,7 @@ export const useConsensus = () => {
 
     client.onmessage = (e: any) => {
       const data = JSON.parse(e.data);
+      console.log(data);
       const event = R.pathOr('', ['result', 'data', 'type'], data);
       if (event === 'tendermint/event/NewRound') {
         formatNewRound(data);
