@@ -53,6 +53,8 @@ const link = typeof window !== 'undefined' ? split(
 const authMiddleware = new ApolloLink((operation, forward) => {
   operation.setContext({
     headers: {
+      "content-type": "application/json",
+      "x-hasura-admin-secret": "dupa
     },
   });
 
@@ -64,9 +66,6 @@ function createApolloClient() {
     ssrMode: typeof window === 'undefined',
     link: concat(authMiddleware, link),
     cache: new InMemoryCache({}),
-    headers: {
-      "x-hasura-admin-secret": "dupa"
-    },
   });
 
   client.defaultOptions = defaultOptions;
