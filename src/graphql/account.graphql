@@ -4,7 +4,7 @@ query Account($address: String, $utc: timestamp) {
   }
   account(where: {address: {_eq: $address}}) {
     address
-    accountBalances: account_balances(limit: 1, order_by: {height: desc}) {
+    accountBalances: account_balance{
       coins
     }
     delegations {
@@ -13,7 +13,7 @@ query Account($address: String, $utc: timestamp) {
         validatorInfo: validator_info {
           operatorAddress: operator_address
         }
-        validatorCommissions: validator_commissions(limit: 1, order_by: {height: desc}) {
+        validatorCommissions: validator_commission{
           commission
         }
       }
@@ -22,7 +22,7 @@ query Account($address: String, $utc: timestamp) {
       amount
       completionTimestamp: completion_timestamp
       validator {
-        validatorCommissions: validator_commissions(limit: 1, order_by: {height: desc}) {
+        validatorCommissions: validator_commission{
           commission
         }
         validatorInfo: validator_info {
