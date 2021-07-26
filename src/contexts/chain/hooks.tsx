@@ -89,7 +89,7 @@ export const useValidatorsAddress = (initialstate:ChainState) => {
       console.log(x);
       let validatorAddress: any;
       
-      x.validatorInfo.operatorAddress == null ? validatorAddress = "" : validatorAddress = x.validatorInfo.operatorAddress;
+      x.validatorInfo == null ? validatorAddress = "" : validatorAddress = x.validatorInfo.operatorAddress;
       // const validatorAddress = x.validatorInfo.operatorAddress;
       const selfAddress = x.validatorInfo.selfDelegateAddress;
       const { consensusAddress } = x.validatorInfo;
