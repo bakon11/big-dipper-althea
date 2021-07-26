@@ -923,7 +923,7 @@ export type Account_Bool_Exp = {
   _not?: Maybe<Account_Bool_Exp>;
   _or?: Maybe<Array<Account_Bool_Exp>>;
   account_balance_histories?: Maybe<Account_Balance_History_Bool_Exp>;
-  account_balances?: Maybe<Account_Balance_Bool_Exp>;
+  account_balance?: Maybe<Account_Balance_Bool_Exp>;
   address?: Maybe<String_Comparison_Exp>;
   delegation_histories?: Maybe<Delegation_History_Bool_Exp>;
   delegation_reward_histories?: Maybe<Delegation_Reward_History_Bool_Exp>;
@@ -20774,22 +20774,22 @@ export type ValidatorsAddressListQuery = { validator: Array<(
 
 
 export const AccountDocument = gql`
-    query Account($address: String, $utc: timestamp) {
+ query Account($address: String, $utc: timestamp) {
   stakingParams: staking_params(limit: 1) {
     bondDenom: bond_denom
   }
   account(where: {address: {_eq: $address}}) {
     address
-    accountBalances: account_balances(limit: 1, order_by: {height: desc}) {
+    accountBalances: account_balance{
       coins
     }
     delegations {
       amount
       validator {
-        validatorInfo: validator_info {
+        validatorInfo: validator_info{
           operatorAddress: operator_address
         }
-        validatorCommissions: validator_commissions(limit: 1, order_by: {height: desc}) {
+        validatorCommissions: validator_commission{
           commission
         }
       }
@@ -20798,7 +20798,7 @@ export const AccountDocument = gql`
       amount
       completionTimestamp: completion_timestamp
       validator {
-        validatorCommissions: validator_commissions(limit: 1, order_by: {height: desc}) {
+        validatorCommissions: validator_commission{
           commission
         }
         validatorInfo: validator_info {
@@ -20826,7 +20826,7 @@ export const AccountDocument = gql`
     limit: 1
     where: {validator_info: {self_delegate_address: {_eq: $address}}}
   ) {
-    commission: validator_commission_amounts(limit: 1, order_by: {height: desc}) {
+    commission: validator_commission_amount {
       amount
     }
   }
