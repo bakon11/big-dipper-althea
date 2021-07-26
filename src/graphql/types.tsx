@@ -21975,7 +21975,7 @@ export const ValidatorDetailsDocument = gql`
       details
       website
     }
-    validatorStatuses: validator_statuse {
+    validatorStatuses: validator_status{
       status
       jailed
       height
