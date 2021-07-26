@@ -36,6 +36,12 @@ const wsLink = new WebSocketLink({
   options: {
     reconnect: true,
   },
+  connectionParams: {
+   headers: {
+      "content-type": "application/json",
+      "x-hasura-admin-secret": process.env.NEXT_PUBLIC_GRAPHQL_PASS
+    },
+  },
   webSocketImpl: WebSocket,
 });
 
