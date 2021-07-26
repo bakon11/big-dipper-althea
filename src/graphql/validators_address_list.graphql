@@ -5,7 +5,7 @@ query ValidatorsAddressList {
       selfDelegateAddress: self_delegate_address
       consensusAddress: consensus_address
     }
-    validatorDescriptions: validator_description(limit: 1, order_by: {height: desc}) {
+    validatorDescriptions: validator_description{
       moniker
       identity
       avatarUrl: avatar_url
