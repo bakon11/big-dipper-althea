@@ -87,7 +87,7 @@ export const useValidatorsAddress = (initialstate:ChainState) => {
 
     data?.validator?.forEach((x, i) => {
       console.log(x);
-      const validatorAddress: any = x.validatorInfo.operatorAddress;
+      const validatorAddress: any = x !== null ? x.validatorInfo.operatorAddress : "null";
       const selfAddress = x.validatorInfo.selfDelegateAddress;
       const { consensusAddress } = x.validatorInfo;
 
