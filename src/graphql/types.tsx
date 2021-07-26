@@ -21919,7 +21919,7 @@ export type TransactionsQueryHookResult = ReturnType<typeof useTransactionsQuery
 export type TransactionsLazyQueryHookResult = ReturnType<typeof useTransactionsLazyQuery>;
 export type TransactionsQueryResult = Apollo.QueryResult<TransactionsQuery, TransactionsQueryVariables>;
 export const LastHundredBlocksDocument = gql`
-    subscription LastHundredBlocks($address: String) {
+ subscription LastHundredBlocks($address: String) {
   block(offset: 1, order_by: {height: desc}, limit: 100) {
     height
     validator {
@@ -21962,7 +21962,7 @@ export function useLastHundredBlocksSubscription(baseOptions?: Apollo.Subscripti
 export type LastHundredBlocksSubscriptionHookResult = ReturnType<typeof useLastHundredBlocksSubscription>;
 export type LastHundredBlocksSubscriptionResult = Apollo.SubscriptionResult<LastHundredBlocksSubscription>;
 export const ValidatorDetailsDocument = gql`
-    query ValidatorDetails($address: String, $utc: timestamp) {
+ query ValidatorDetails($address: String, $utc: timestamp) {
   stakingParams: staking_params(limit: 1) {
     bondDenom: bond_denom
   }
@@ -22046,7 +22046,7 @@ export type ValidatorDetailsQueryHookResult = ReturnType<typeof useValidatorDeta
 export type ValidatorDetailsLazyQueryHookResult = ReturnType<typeof useValidatorDetailsLazyQuery>;
 export type ValidatorDetailsQueryResult = Apollo.QueryResult<ValidatorDetailsQuery, ValidatorDetailsQueryVariables>;
 export const ValidatorsDocument = gql`
-    query Validators {
+ query Validators {
   stakingParams: staking_params(limit: 1) {
     bondDenom: bond_denom
   }
@@ -22054,39 +22054,29 @@ export const ValidatorsDocument = gql`
     bondedTokens: bonded_tokens
   }
   validator {
-    validatorStatuses: validator_statuses(order_by: {height: desc}, limit: 1) {
+    validatorStatuses: validator_status{
       status
       jailed
       height
     }
-    validatorSigningInfos: validator_signing_infos(
-      order_by: {height: desc}
-      limit: 1
-    ) {
+    validatorSigningInfos: validator_signing_info{
       missedBlocksCounter: missed_blocks_counter
     }
     validatorInfo: validator_info {
       operatorAddress: operator_address
       selfDelegateAddress: self_delegate_address
     }
-    validatorVotingPowers: validator_voting_powers(
-      offset: 0
-      limit: 1
-      order_by: {height: desc}
-    ) {
+    validatorVotingPowers: validator_voting_power{
       votingPower: voting_power
     }
-    validatorCommissions: validator_commissions(order_by: {height: desc}, limit: 1) {
+    validatorCommissions: validator_commission{
       commission
     }
     delegations {
       amount
       delegatorAddress: delegator_address
     }
-    validatorSigningInfos: validator_signing_infos(
-      order_by: {height: desc}
-      limit: 1
-    ) {
+    validatorSigningInfos: validator_signing_info{
       missedBlocksCounter: missed_blocks_counter
     }
   }
@@ -22123,7 +22113,7 @@ export type ValidatorsQueryHookResult = ReturnType<typeof useValidatorsQuery>;
 export type ValidatorsLazyQueryHookResult = ReturnType<typeof useValidatorsLazyQuery>;
 export type ValidatorsQueryResult = Apollo.QueryResult<ValidatorsQuery, ValidatorsQueryVariables>;
 export const ValidatorsAddressListDocument = gql`
-    query ValidatorsAddressList {
+query ValidatorsAddressList {
   validator {
     validatorInfo: validator_info {
       operatorAddress: operator_address
