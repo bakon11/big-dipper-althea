@@ -17985,9 +17985,9 @@ export type Validator = {
   /** An aggregate relationship */
   validator_signing_infos_aggregate: Validator_Signing_Info_Aggregate;
   /** An array relationship */
-  validator_statuses: Array<Validator_Status>;
+  validator_status: Array<Validator_Status>;
   /** An aggregate relationship */
-  validator_statuses_aggregate: Validator_Status_Aggregate;
+  validator_status_aggregate: Validator_Status_Aggregate;
   /** An array relationship */
   validator_voting_powers: Array<Validator_Voting_Power>;
   /** An aggregate relationship */
