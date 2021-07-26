@@ -21975,41 +21975,27 @@ export const ValidatorDetailsDocument = gql`
       details
       website
     }
-    validatorStatuses: validator_statuses(order_by: {height: desc}, limit: 1) {
+    validatorStatuses: validator_statuse {
       status
       jailed
       height
     }
-    validatorSigningInfos: validator_signing_infos(
-      order_by: {height: desc}
-      limit: 1
-    ) {
+    validatorSigningInfos: validator_signing_info{
       missedBlocksCounter: missed_blocks_counter
     }
     validatorInfo: validator_info {
       operatorAddress: operator_address
       selfDelegateAddress: self_delegate_address
     }
-    validatorCommissions: validator_commissions(order_by: {height: desc}, limit: 1) {
+    validatorCommissions: validator_commission{
       commission
     }
-    validatorVotingPowers: validator_voting_powers(
-      offset: 0
-      limit: 1
-      order_by: {height: desc}
-    ) {
+    validatorVotingPowers: validator_voting_power{
       height
       votingPower: voting_power
     }
     delegations {
       amount
-      delegatorAddress: delegator_address
-    }
-    redelegationsByDstValidatorAddress(where: {completion_time: {_gt: $utc}}) {
-      amount
-      completionTime: completion_time
-      from: src_validator_address
-      to: dst_validator_address
       delegatorAddress: delegator_address
     }
     redelegationsBySrcValidatorAddress(where: {completion_time: {_gt: $utc}}) {
