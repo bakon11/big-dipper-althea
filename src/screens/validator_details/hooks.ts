@@ -285,6 +285,7 @@ export const useValidatorDetails = () => {
     // ============================
     const formatRedelegations = () => {
       const redelegations = [
+        /*
         ...data.validator[0].redelegationsByDstValidatorAddress.map((x) => {
           const to = findAddress(findOperator(x.to));
           const from = findAddress(findOperator(x.from));
@@ -310,6 +311,7 @@ export const useValidatorDetails = () => {
             },
           });
         }),
+        */
         ...data.validator[0].redelegationsBySrcValidatorAddress.map((x) => {
           const to = findAddress(findOperator(x.to));
           const from = findAddress(findOperator(x.from));
