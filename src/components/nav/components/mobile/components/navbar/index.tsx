@@ -10,6 +10,7 @@ import BigDipperLogoRed from '@assets/big-dipper-red.svg';
 import { HOME } from '@utils/go_to_page';
 import { useStyles } from './styles';
 import { NavbarProps } from './types';
+import { chainConfig } from '@configs';
 
 const Navbar = (props:NavbarProps) => {
   const classes = useStyles();
@@ -26,9 +27,9 @@ const Navbar = (props:NavbarProps) => {
       <Link href={HOME}>
         <a className={classes.a}>
           {theme === 'light' ? (
-            <BigDipperLogoRed className={classes.logo} />
+            chainConfig.title
           ) : (
-            <BigDipperLogoWhite className={classes.logo} />
+            chainConfig.title
           )}
         </a>
       </Link>
