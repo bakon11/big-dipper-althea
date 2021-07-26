@@ -1,9 +1,15 @@
-# Big Dipper Interface ✨ Cosmos 2.0 For Althea Blockchain
+# Big Dipper Interface ✨ Cosmos 2.0 For Althea Blockchain 2v3
 
-## Althea
-I ahve forked this repo and fixed thing so it's compatible with Althea Testnet 2V3
 
 ## About
+Forked from https://github.com/forbole/big-dipper-desmos and modified so it's compatible with Althea Testnet 2V3;
+
+## About Althea
+Fast, affordable, locally run internet
+
+Althea's unique cooperative vision for the internet brings peering from the data center to the field. Empowering communities to build multi-stakeholder networks faster and more affordably than legacy telecom models. 
+
+## About Big Dipper
 Big Dipper is an open-source block explorer and token management tool serving over 10 proof-of-stake blockchains. It has been forked more than 100 times on GitHub and has served audiences from 140 countries and regions.
 
 Visit [Big Dipper](https://bigdipper.live/) to see a complete list of chains.
