@@ -17971,7 +17971,7 @@ export type Validator = {
   /** An aggregate relationship */
   validator_commissions_aggregate: Validator_Commission_Aggregate;
   /** An array relationship */
-  validator_descriptions: Array<Validator_Description>;
+  validator_description: Array<Validator_Description>;
   /** An aggregate relationship */
   validator_descriptions_aggregate: Validator_Description_Aggregate;
   /** An object relationship */
@@ -18385,7 +18385,7 @@ export type Validator_Bool_Exp = {
   validator_commission_amount_histories?: Maybe<Validator_Commission_Amount_History_Bool_Exp>;
   validator_commission_amounts?: Maybe<Validator_Commission_Amount_Bool_Exp>;
   validator_commissions?: Maybe<Validator_Commission_Bool_Exp>;
-  validator_descriptions?: Maybe<Validator_Description_Bool_Exp>;
+  validator_description?: Maybe<Validator_Description_Bool_Exp>;
   validator_info?: Maybe<Validator_Info_Bool_Exp>;
   validator_infos?: Maybe<Validator_Info_Bool_Exp>;
   validator_signing_infos?: Maybe<Validator_Signing_Info_Bool_Exp>;
@@ -21126,10 +21126,7 @@ export const BlocksDocument = gql`
         operatorAddress: operator_address
         self_delegate_address
       }
-      validatorDescriptions: validator_descriptions(
-        limit: 1
-        order_by: {height: desc}
-      ) {
+      validatorDescriptions: validator_description{
         moniker
         identity
       }
@@ -21974,10 +21971,7 @@ export const ValidatorDetailsDocument = gql`
     bonded: bonded_tokens
   }
   validator(where: {validator_info: {operator_address: {_eq: $address}}}) {
-    validatorDescriptions: validator_descriptions(
-      order_by: {height: desc}
-      limit: 1
-    ) {
+    validatorDescriptions: validator_description {
       details
       website
     }
@@ -22150,10 +22144,7 @@ export const ValidatorsAddressListDocument = gql`
       selfDelegateAddress: self_delegate_address
       consensusAddress: consensus_address
     }
-    validatorDescriptions: validator_descriptions(
-      limit: 1
-      order_by: {height: desc}
-    ) {
+    validatorDescriptions: validator_description{
       moniker
       identity
       avatarUrl: avatar_url
