@@ -90,10 +90,10 @@ export const useValidatorsAddress = (initialstate:ChainState) => {
       let selfAddress: any;
       let consensusAddress: any;
       
-      x.validatorInfo == null ? validatorAddress = "" : validatorAddress = x.validatorInfo.operatorAddress;
-      x.validatorInfo == null ? validatorAddress = "" : selfAddress = x.validatorInfo.selfDelegateAddress;
-      x.validatorInfo == null ? { consensusAddress } = {} : { consensusAddress } = x.validatorInfo;
-      
+      x.validatorInfo == null ? validatorAddress = "null" : validatorAddress = x.validatorInfo.operatorAddress;
+      x.validatorInfo == null ? validatorAddress = "null" : selfAddress = x.validatorInfo.selfDelegateAddress;
+      x.validatorInfo == null ? { consensusAddress } = { null } : { consensusAddress } = x.validatorInfo;
+      console.log(x.validatorInfo);
       console.log(consensusAddress);
       
       const defaultMoniker = getMiddleEllipsis(validatorAddress, {
