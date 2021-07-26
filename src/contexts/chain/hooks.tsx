@@ -86,14 +86,16 @@ export const useValidatorsAddress = (initialstate:ChainState) => {
     // ===============================
 
     data?.validator?.forEach((x, i) => {
-      console.log(x);
       let validatorAddress: any;
       let selfAddress: any;
+      let consensusAddress: any;
       
       x.validatorInfo == null ? validatorAddress = "" : validatorAddress = x.validatorInfo.operatorAddress;
       x.validatorInfo == null ? validatorAddress = "" : selfAddress = x.validatorInfo.selfDelegateAddress;
-      const { consensusAddress } = x.validatorInfo;
-
+      x.validatorInfo == null ? { consensusAddress } = {} : { consensusAddress } = x.validatorInfo;
+      
+      console.log(consensusAddress);
+      
       const defaultMoniker = getMiddleEllipsis(validatorAddress, {
         beginning: 6, ending: 10,
       });
