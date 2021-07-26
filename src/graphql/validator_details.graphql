@@ -28,6 +28,7 @@ query ValidatorDetails($address: String, $utc: timestamp) {
     validatorDescriptions: validator_description{
       details
       website
+      moniker
     }
     validatorStatuses: validator_status {
       status
