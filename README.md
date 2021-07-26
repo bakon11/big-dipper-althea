@@ -1,4 +1,7 @@
-# Big Dipper Interface ✨ Cosmos 2.0
+# Big Dipper Interface ✨ Cosmos 2.0 For Althea Blockchain
+
+## Althea
+I ahve forked this repo and fixed thing so it's compatible with Althea Testnet 2V3
 
 ## About
 Big Dipper is an open-source block explorer and token management tool serving over 10 proof-of-stake blockchains. It has been forked more than 100 times on GitHub and has served audiences from 140 countries and regions.
@@ -20,6 +23,7 @@ NODE_ENV=development
 PORT=3000
 NEXT_PUBLIC_GRAPHQL_URL=
 NEXT_PUBLIC_GRAPHQL_WS=
+NEXT_PUBLIC_GRAPHQL_PASS=
 NEXT_PUBLIC_URL=
 NEXT_PUBLIC_WS_CHAIN_URL=
 ```
@@ -28,6 +32,7 @@ NEXT_PUBLIC_WS_CHAIN_URL=
 `PORT` - the port to run the app on \
 `NEXT_PUBLIC_GRAPHQL_URL` - refers to the api hosted by [BDJuno](https://github.com/forbole/bdjuno) \
 `NEXT_PUBLIC_GRAPHQL_WS` - refers to the websocket hosted by [BDJuno](https://github.com/forbole/bdjuno) \
+`NEXT_PUBLIC_GRAPHQL_PASS` - refers to the password you setup for your HUSARA engine (note this is not secure at all but works for now) \
 `NEXT_PUBLIC_URL` - the api where you will be hosting the frontend of this explorer (make sure there is no `/` at the end ex: `https://morpheus.desmos.network` not `https://morpheus.desmos.network/`) \
 `NEXT_PUBLIC_WS_CHAIN_URL` - refers to the rpc websocket hosted by the node \
 
