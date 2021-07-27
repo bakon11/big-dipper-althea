@@ -79,8 +79,8 @@ export const useValidators = () => {
       return ({
         validator: {
           address: x.validatorInfo !== null && x.validatorInfo.operatorAddress,
-          imageUrl: validator.imageUrl,
-          name: validator.moniker,
+          imageUrl: validator !== undefined && validator.imageUrl,
+          name: validator !== undefined && validator.moniker,
         },
         votingPower,
         votingPowerPercent,
