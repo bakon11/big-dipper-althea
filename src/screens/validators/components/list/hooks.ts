@@ -54,11 +54,8 @@ export const useValidators = () => {
 
     const formattedItems = data.validator.map((x) => {
       let validator;
-      
       if(x.validatorInfo !== null){ validator = findAddress(x.validatorInfo.operatorAddress); };
-      
       console.log(validator);
-      
       const votingPower = R.pathOr(0, ['validatorVotingPowers', 0, 'votingPower'], x);
       const votingPowerPercent = numeral((votingPower / votingPowerOverall) * 100).value();
       const totalDelegations = x.delegations.reduce((a, b) => {
@@ -79,7 +76,7 @@ export const useValidators = () => {
       return ({
         validator: {
           address: x.validatorInfo !== null && x.validatorInfo.operatorAddress,
-          imageUrl: validator !== undefined && validator.imageUrl,
+          // imageUrl: validator !== undefined && validator.imageUrl,
           name: validator !== undefined && validator.moniker,
         },
         votingPower,
