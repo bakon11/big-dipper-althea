@@ -78,7 +78,7 @@ export const useValidators = () => {
 
       return ({
         validator: {
-          address: x.validatorInfo.operatorAddress,
+          address: x.validatorInfo !== null && x.validatorInfo.operatorAddress,
           imageUrl: validator.imageUrl,
           name: validator.moniker,
         },
