@@ -53,9 +53,9 @@ export const useValidators = () => {
     const signedBlockWindow = R.pathOr(0, ['slashingParams', 0, 'signedBlockWindow'], data);
 
     const formattedItems = data.validator.map((x) => {
+      
       let validator;
       if(x.validatorInfo !== null){ validator = findAddress(x.validatorInfo.operatorAddress); };
-      console.log(validator);
       
       const votingPower = R.pathOr(0, ['validatorVotingPowers', 0, 'votingPower'], x);
       const votingPowerPercent = numeral((votingPower / votingPowerOverall) * 100).value();
@@ -144,7 +144,7 @@ export const useValidators = () => {
       sorted.sort((a, b) => {
         let compareA = R.pathOr(undefined, [...state.sortKey.split('.')], a);
         let compareB = R.pathOr(undefined, [...state.sortKey.split('.')], b);
-
+        console.log(compareB);
         if (typeof compareA === 'string') {
           compareA = compareA.toLowerCase();
           compareB = compareB.toLowerCase();
