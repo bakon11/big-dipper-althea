@@ -46,6 +46,7 @@ export const useValidators = () => {
   // Parse data
   // ==========================
   const formatValidators = (data: ValidatorsQuery) => {
+    console.log(data);
     const votingPowerOverall = formatDenom(
       R.pathOr(0, ['stakingPool', 0, 'bondedTokens'], data),
       R.pathOr(chainConfig.primaryTokenUnit, ['stakingParams', 0, 'bondDenom'], data),
@@ -54,6 +55,7 @@ export const useValidators = () => {
 
     const formattedItems = data.validator.map((x) => {
       if(x.validatorInfo !== null){ const validator = findAddress(x.validatorInfo.operatorAddress); };
+     
       const votingPower = R.pathOr(0, ['validatorVotingPowers', 0, 'votingPower'], x);
       const votingPowerPercent = numeral((votingPower / votingPowerOverall) * 100).value();
       const totalDelegations = x.delegations.reduce((a, b) => {
