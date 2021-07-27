@@ -56,6 +56,7 @@ export const useValidators = () => {
       let validator;
       if(x.validatorInfo !== null){ validator = findAddress(x.validatorInfo.operatorAddress); };
       console.log(validator);
+      
       const votingPower = R.pathOr(0, ['validatorVotingPowers', 0, 'votingPower'], x);
       const votingPowerPercent = numeral((votingPower / votingPowerOverall) * 100).value();
       const totalDelegations = x.delegations.reduce((a, b) => {
