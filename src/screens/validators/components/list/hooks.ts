@@ -53,8 +53,12 @@ export const useValidators = () => {
     const signedBlockWindow = R.pathOr(0, ['slashingParams', 0, 'signedBlockWindow'], data);
 
     const formattedItems = data.validator.map((x) => {
-      if(x.validatorInfo !== null){ const validator = findAddress(x.validatorInfo.operatorAddress); };
+      let validator;
+      
+      if(x.validatorInfo !== null){ validator = findAddress(x.validatorInfo.operatorAddress); };
+      
       console.log(validator);
+      
       const votingPower = R.pathOr(0, ['validatorVotingPowers', 0, 'votingPower'], x);
       const votingPowerPercent = numeral((votingPower / votingPowerOverall) * 100).value();
       const totalDelegations = x.delegations.reduce((a, b) => {
