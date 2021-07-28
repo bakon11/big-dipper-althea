@@ -22059,9 +22059,6 @@ export const ValidatorsDocument = gql`
       jailed
       height
     }
-    validatorSigningInfos: validator_signing_info{
-      missedBlocksCounter: missed_blocks_counter
-    }
     validatorInfo: validator_info {
       operatorAddress: operator_address
       selfDelegateAddress: self_delegate_address
