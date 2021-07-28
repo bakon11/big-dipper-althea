@@ -145,10 +145,10 @@ export const useValidators = () => {
         let compareA = R.pathOr(undefined, [...state.sortKey.split('.')], a);
         let compareB = R.pathOr(undefined, [...state.sortKey.split('.')], b);
        
-        if (typeof compareA === 'string' && typeof compareB === 'string') {
+        if (typeof compareA === 'string' ) {
           compareA = compareA.toLowerCase();
           compareB = compareB.toLowerCase();
-          console.log(compareB);
+          // console.log(compareB);
         }
 
         if (compareA < compareB) {
