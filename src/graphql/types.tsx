@@ -21339,7 +21339,7 @@ export const TotalVotingPowerListenerDocument = gql`
     bonded: bonded_tokens
   }
 }
-    `;
+   `;
 
 /**
  * __useTotalVotingPowerListenerSubscription__
